@@ -1,0 +1,33 @@
+{
+  "name": "dsh-session-trash",
+  "version": "0.1.0",
+  "description": "Local-only session trash for DeepSeek Harness: delete a session into an on-disk recycle bin under ~/.dsh/session-trash, restore it, purge it, or let it expire automatically after 15 days. Zero dependencies, zero network calls.",
+  "type": "module",
+  "license": "MIT",
+  "author": "leai9572000",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leai9572000/dsh-session-trash.git"
+  },
+  "homepage": "https://github.com/leai9572000/dsh-session-trash#readme",
+  "bugs": {
+    "url": "https://github.com/leai9572000/dsh-session-trash/issues"
+  },
+  "keywords": ["dsh-plugin", "deepseek-harness", "session", "recycle-bin"],
+  "files": ["src/", "cordis.patch.yml", "README.md"],
+  "engines": { "node": ">=20" },
+  "publishConfig": { "access": "public" },
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./src/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web"
+    }
+  }
+}
+
